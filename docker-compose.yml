@@ -1,0 +1,51 @@
+services:
+    base:
+        build:
+            context: .
+            target: base
+        image: caspianzhao/playwright:base
+    pnpm:
+        build:
+            context: .
+            target: pnpm
+        image: caspianzhao/playwright:pnpm
+    chromium:
+        build:
+            context: .
+            target: chromium
+        image: caspianzhao/playwright:chromium
+    firefox:
+        build:
+            context: .
+            target: firefox
+        image: caspianzhao/playwright:firefox
+    webkit:
+        build:
+            context: .
+            target: webkit
+        image: caspianzhao/playwright:webkit
+    chrome:
+        build:
+            context: .
+            target: chrome
+        image: caspianzhao/playwright:chrome
+    msedge:
+        build:
+            context: .
+            target: msedge
+        image: caspianzhao/playwright:msedge
+    all:
+        build:
+            context: .
+            target: all
+        image: caspianzhao/playwright:all
+    base-light:
+        build:
+            context: .
+            target: base-light
+        image: caspianzhao/playwright:base-light
+    chromium-light:
+        build:
+            context: .
+            target: chromium-light
+        image: caspianzhao/playwright:chromium-light
