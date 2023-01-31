@@ -3,49 +3,49 @@ services:
         build:
             context: .
             target: base
-        image: caspianzhao/playwright:base
+        image: caspianzhao/playwright:base-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     pnpm:
         build:
             context: .
             target: pnpm
-        image: caspianzhao/playwright:pnpm
+        image: caspianzhao/playwright:pnpm-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     chromium:
         build:
             context: .
             target: chromium
-        image: caspianzhao/playwright:chromium
+        image: caspianzhao/playwright:chromium-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     firefox:
         build:
             context: .
             target: firefox
-        image: caspianzhao/playwright:firefox
+        image: caspianzhao/playwright:firefox-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     webkit:
         build:
             context: .
             target: webkit
-        image: caspianzhao/playwright:webkit
+        image: caspianzhao/playwright:webkit-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     chrome:
         build:
             context: .
             target: chrome
-        image: caspianzhao/playwright:chrome
+        image: caspianzhao/playwright:chrome-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     msedge:
         build:
             context: .
             target: msedge
-        image: caspianzhao/playwright:msedge
+        image: caspianzhao/playwright:msedge-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     all:
         build:
             context: .
             target: all
-        image: caspianzhao/playwright:all
+        image: caspianzhao/playwright:all-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     base-light:
         build:
             context: .
             target: base-light
-        image: caspianzhao/playwright:base-light
+        image: caspianzhao/playwright:base-light-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
     chromium-light:
         build:
             context: .
             target: chromium-light
-        image: caspianzhao/playwright:chromium-light-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
+        image: caspianzhao/playwright:chromium-light-${IMAGE_VERSION}-${NODE_VERSION}-${PLAYWRIGHT_VERSION}

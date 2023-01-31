@@ -7,7 +7,7 @@ on:
 
 jobs:
     build-normal:
-        name: Build Normal Docker Images
+        name: Build Normal Docker Images (node:16.18.0, playwright:1.30.0)
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Repository
@@ -26,6 +26,10 @@ jobs:
                   password: ${{ secrets.DOCKERHUB_TOKEN }}
 
             - name: Build and Push Docker Image
+              env:
+                IMAGE_VERSION: 0.0.1
+                NODE_VERSION: 16.18.0
+                PLAYWRIGHT_VERSION: 1.30.0
               run: ./scripts/build.sh
 
             - name: Tag Image Alias
@@ -56,6 +60,7 @@ jobs:
 
             - name: Build and Push Docker Image
               env:
+                IMAGE_VERSION: 0.0.1
                 NODE_VERSION: 16.18.0
                 PLAYWRIGHT_VERSION: 1.30.0
               run: ./scripts/build-light.sh
