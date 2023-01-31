@@ -1,9 +1,12 @@
 FROM ubuntu:focal as node
 
+ARG NODE_VERSION
+ARG PLAYWRIGHT_VERSION
+
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NVM_DIR "/root/.nvm"
 ENV NVM_VERSION "0.39.1"
-ENV NODE_VERSION "16.18.0"
+ENV NODE_VERSION=${NODE_VERSION}
 ENV NODE_PATH "$NVM_DIR/v$NODE_VERSION/lib/node_modules"
 ENV PATH "$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH"
 
@@ -15,7 +18,7 @@ FROM node as base
 
 ENV IMAGE_INFO="$(lsb_release -ds), Node $(node -v), Playwright $(playwright -V)"
 
-RUN npm i -g playwright-core && rm -rf /root/.npm
+RUN npm i -g playwright-core@$PLAYWRIGHT_VERSION && rm -rf /root/.npm
 CMD eval echo $IMAGE_INFO
 
 FROM base as pnpm

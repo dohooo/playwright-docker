@@ -36,7 +36,7 @@ jobs:
                   regctl registry logout
 
     build-light:
-        name: Build Light Docker Images
+        name: Build Light Docker Images (node:16.18.0, playwright:1.30.0)
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Repository
@@ -55,6 +55,9 @@ jobs:
                   password: ${{ secrets.DOCKERHUB_TOKEN }}
 
             - name: Build and Push Docker Image
+              env:
+                NODE_VERSION: 16.18.0
+                PLAYWRIGHT_VERSION: 1.30.0
               run: ./scripts/build-light.sh
 
     update-readme:

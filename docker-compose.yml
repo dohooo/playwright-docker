@@ -48,4 +48,4 @@ services:
         build:
             context: .
             target: chromium-light
-        image: caspianzhao/playwright:chromium-light
+        image: caspianzhao/playwright:chromium-light-${NODE_VERSION}-${PLAYWRIGHT_VERSION}
